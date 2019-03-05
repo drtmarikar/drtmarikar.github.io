@@ -1,0 +1,45 @@
+
+ <!DOCTYPE html>
+<html>
+
+        <head>
+                <script src = "https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+                
+         </head>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+    
+    <script>
+      // Initialize Firebase
+    //   var config = {
+    //     apiKey: "AIzaSyBVVZlsJ7Z924n4xiEvI1N_Z57-PUifq_I",
+    //     authDomain: "tariqsproject.firebaseapp.com",
+    //     databaseURL: "https://tariqsproject.firebaseio.com",
+    //     projectId: "tariqsproject",
+    //     storageBucket: "",
+    //     messagingSenderId: "709649358625"
+    // //   };
+    //     firebase.initializeApp(config);
+        var ref = new Firebase('https://tariqsproject.firebaseio.com');
+        var playersRef = ref.child("players");
+        playersRef.on("value", function(snapshot) {
+                console.log(snapshot.val());
+                }, function (error) {
+                console.log("Error: " + error.code);
+                });
+        // playersRef.push({
+        // name: "John",
+        // number: 1,
+        // age: 30
+        // });
+        // playersRef.push({
+        // name: "Amanda",
+        // number: 2,
+        // age: 20
+        // });
+
+    </script>
+
+  
+    </html>
